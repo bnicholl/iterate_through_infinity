@@ -1,4 +1,4 @@
-# we'll use this list for or recursive DFS functions
+# we'll use this tuple for or recursive DFS functions
 Tree =  (1, 
         (2, None, (4, None, None)), 
         (3, (5, (7, None, None), (8, None, None)), 
