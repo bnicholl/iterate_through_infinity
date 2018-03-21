@@ -8,25 +8,10 @@ Trees =  [1,
         [2, None, [4, None, None]], 
         [3, [5, [7, None, None], [8, None, None]], 
         [6, [9, None, None], [10,[11, None, None], None]]]]
-          
-    
-"""method created by some dude, its interesting how he used 'from' in the algo"""
-def transverse(s, target, path=[]):
-   for i in s:
-       if i == target or target in i if isinstance(i, tuple) else False:
-          yield path
-       else:
-          if not isinstance(i, tuple):
-            path.append(i)
-          else:
-            yield from transverse(i, target, path+[i[0]])
-
-results = list(transverse(Tree, 11))
-final_results = sorted(set(filter(None, results[0]))) if results else 'not found'
 
 
 
-"""iterates through tree via dfs, and outputs all nodes"""
+"""iterates through tree with a recursive algorithm via depth first search, and outputs all nodes"""
 def dfs(tree, li = [] ):
     
     for i in tree:
@@ -40,7 +25,8 @@ def dfs(tree, li = [] ):
             
     return li
 
-"""iterates through tree via dfs, and outputs all paths in a list"""
+"""iterates through tree using a recursive algo via depth first search, and outputs all paths in a list
+   We will use the output of this function to find all perfect binary child nodes in the path function below"""
 def dfs_list(tree, path = []): 
     
     for i in tree:
@@ -62,7 +48,8 @@ def dfs_list(tree, path = []):
     return path
 
 """THIS TAKES OUTPUT OF DFS_LIST AS VECTORS ARGUMENT!!!!!!!!!"""            
-"""gives the paths of all of the perfect subtrees"""
+"""gives the amount of nodes that have perfect subtrees. For example, in our example in the picture, there
+   are 3 perfect binary subtrees of 3,3 and 7. So that would be our output"""
 def path(vectors):
     indices = []
     scores = []
@@ -101,7 +88,8 @@ def path(vectors):
                     
             
 
-"""iterates through tree via breadth first search, outputs all nodes in bfs order""" 
+"""iterates through tree with an iterative looping algorithm via breadth first search,
+   and outputs all nodes in bfs order""" 
 def bfs(queue):
 
     path = []
@@ -131,15 +119,6 @@ def bfs(queue):
                 break   
     return path
 
-
-
-
-h =[3,4,5,6]
-""" this if after the first if says only run code if isinstance is True. 
-    makes it so it doesnt error if h is not a list, but instead an int """
-
-#if 4 in h if isinstance(h, list) else print('no'):
-#    print('y')
 
 
 
