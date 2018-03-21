@@ -1,14 +1,14 @@
-
+# we'll use this list for or recursive DFS functions
 Tree =  (1, 
         (2, None, (4, None, None)), 
         (3, (5, (7, None, None), (8, None, None)), 
         (6, (9, None, None), (10, (11, None, None), None)))   )
 
+# we'll use this list for our iterative BFS function
 Trees =  [1, 
         [2, None, [4, None, None]], 
         [3, [5, [7, None, None], [8, None, None]], 
         [6, [9, None, None], [10,[11, None, None], None]]]]
-
 
 
 """iterates through tree with a recursive algorithm via depth first search, and outputs all nodes"""
